@@ -16,7 +16,7 @@ def cipher():
 
 def caesar(shift2, text): # The encrypt boolean can be determed by other functions (below)
 
-    if not 1 <= shift2 <= 25:
+    if not 1 <= shift2 or not shift2 <= 25:
         return 'Shift must be an integer between 1 and 25'
 
     if decision == 'DECRYPT': # Checks if its decrypt, then reverses the shift
