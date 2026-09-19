@@ -66,10 +66,10 @@ class Book:
         return f"'{self.title}' has {self.pages} pages"
     # does the same thing but for str()
     def __eq__(self, other):
-        return self_pages == other.pages
+        return self.pages == other.pages
     # changes how == operation works
-book1 = Book('ZATO: I love the world and everything in it', '696')
-book2 = Book('Milk inside a bag of milk inside a bag of milk', '420')
+book1 = Book('ZATO: I love the world and everything in it', 696)
+book2 = Book('Milk inside a bag of milk inside a bag of milk', 420)
 
 print(len(book1)) # 696
 print(len(book2)) # 420

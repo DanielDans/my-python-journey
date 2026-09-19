@@ -16,7 +16,7 @@ print(type(3.14))
 print(type(4 - 4j))
 print(type(['Asabeneh', 'Python', 'Finland']))
 print(type({3.4, 4.5}))
-print(type('dumbass time taking shit bro'))
+print(type('awesome python'))
 # exercise 3
 # define coordinates as (x, y)
 point1 = (2, 3)

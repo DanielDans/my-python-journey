@@ -15,3 +15,14 @@ for index, language in enumerate(languages):
     print(f'Index {index} and language {language}')
 # loop variables can stack
 # for's value (index, argument) of the enumerate are defined in its order
+# enumerate(variable, START)
+
+ids = [1, 2, 3, 4]
+
+list(zip(languages, ids))
+# [(language, 1), (language, 2)]
+# makes an iterator of tuples, combining lists with lists
+
+for language, order in zip(languages, ids):
+    print(f'Language: {language}')
+    print(f'Order: {ids}')
