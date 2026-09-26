@@ -102,3 +102,30 @@ except MediaError as e:
     print(f'Media Error: {e}')
     print(f'Unable to add {e.obj}: {type(e.obj)}')
 
+# Abstraction
+# Process of hiding complex implementation details and showing only whats necessary
+# does it through "abc" library
+# provides ABC class (abstract base class) and @abstractmethod
+# ABC is meant to be inherited from, and cant create direct objects
+# @abstractmethod must have subclasses overrode by it to be considered concrete and instantiable
+from abc import ABC, abstractmethod
+
+# define a base class
+class AbstractClass(ABC): # you dont instantiate ABC, you inherit directly from it
+    @abstractmethod
+    def abstract_method(self):
+        pass
+
+# concrete subclass that implements the abstract method
+class ConcreteClassOne(AbstractClass):
+    def abstract_method(self):
+        print('Implementation in ConcreteClassOne')
+
+# another
+class ConcreteClassTwo(AbstractClass):
+    def abstract_method(self):
+        print('Implementation in ConcreteClassTwo')
+
+# we instantiate concrete classes and have them implement their own abstract methods
+# you cant make an instance out of the ABC class
+# you cant instantiate an ABC subclass that doesnt abstract the parent method
