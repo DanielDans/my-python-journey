@@ -2,9 +2,14 @@ def merge_sort(arr): # base function
     if len(arr) <= 1: # base case checking if it has already split to 1
         return arr # sends arr as an output
 
+    print(f'Array: {arr}')
+
     mid = len(arr) // 2 # interpretation of the middle
     min = merge_sort(arr[:mid]) # recursive call to the left side of array, splits it into halves until base case
     max = merge_sort(arr[mid:]) # recursive call to the right side of array, splits it into halves until base case
+
+    print(f'Left: {min}')
+    print(f'Right: {max}')
 
     sorted = []
     i = 0 # base pointer for left
@@ -13,9 +18,11 @@ def merge_sort(arr): # base function
     while i < len(min) and j < len(max): # while loop to check if the left and right side of the array is less than the length of the array
         if min[i] < max[j]: # if the left side is less than the right
             sorted.append(min[i]) # append left to sorted array
+            print(f'Appended from left: {min[i]}')
             i += 1 # looks at next element in the left
         else: # if the right side is less than the left
             sorted.append(max[j]) # append right to sorted array
+            print(f'Appended from right: {max[j]}')
             j += 1 # looks at next element in the right
 
     sorted.extend(min[i:]) # extend sorted array with remaining elements in the left
@@ -49,6 +56,6 @@ def binary_search(search_list, value):
     
     return [], "Value not found"
 
-print(binary_search([1, 2, 3, 4, 5], 3))
-print(binary_search([1, 2, 3, 4, 5, 9], 4))
-print(binary_search([1, 3, 5, 9, 14, 22], 10))
+# print(binary_search([1, 2, 3, 4, 5], 3))
+# print(binary_search([1, 2, 3, 4, 5, 9], 4))
+# print(binary_search([1, 3, 5, 9, 14, 22], 10))
